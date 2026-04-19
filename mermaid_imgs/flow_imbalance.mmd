@@ -1,0 +1,13 @@
+graph TD
+    A["Imbalanced Dataset<br/>Pos:1071 Neg:648 Neu:528"] --> B["Strategy 1:<br/>Class Weights<br/>cost-sensitive loss"]
+    A --> C["Strategy 2:<br/>SMOTE<br/>synthetic oversampling"]
+    A --> D["Strategy 3:<br/>Focal Loss<br/>down-weight easy examples"]
+    A --> E["Strategy 4:<br/>Threshold Tuning<br/>per-class boundaries"]
+    A --> F["Strategy 5:<br/>Text Augmentation<br/>synonym + deletion"]
+    B --> G["Balanced Training"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#e74c3c,stroke:#c0392b,color:#fff
+    style G fill:#2ecc71,stroke:#27ae60,color:#fff

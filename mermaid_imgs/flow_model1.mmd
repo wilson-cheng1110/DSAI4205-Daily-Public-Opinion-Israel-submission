@@ -1,0 +1,10 @@
+graph LR
+    A["Cleaned text"] --> B["Tokenize<br/>split"]
+    B --> C["Word2Vec Lookup<br/>300d per token<br/>from scratch, 3526 vocab"]
+    C --> D["Mean Pool<br/>average all vectors"]
+    D --> E["Single 300d<br/>document vector"]
+    E --> F["SVM Classifier<br/>RBF kernel, C=1.0"]
+    F --> G["3-class<br/>prediction"]
+    style A fill:#3498db,stroke:#2980b9,color:#fff
+    style F fill:#e74c3c,stroke:#c0392b,color:#fff
+    style G fill:#2ecc71,stroke:#27ae60,color:#fff

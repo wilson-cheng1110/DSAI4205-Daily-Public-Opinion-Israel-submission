@@ -1,0 +1,6 @@
+graph LR
+    A["Input tokens"] --> B["12 Transformer layers<br/>with self-attention"]
+    B --> C["CLS embedding<br/>768d contextual"]
+    C --> D["MLP classifier<br/>256 to 128 to 3"]
+    style A fill:#3498db,stroke:#2980b9,color:#fff
+    style D fill:#e74c3c,stroke:#c0392b,color:#fff

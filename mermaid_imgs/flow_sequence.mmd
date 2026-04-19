@@ -1,0 +1,6 @@
+graph LR
+    A["Token embeddings<br/>100 x 300 matrix"] --> B["BiLSTM<br/>2 layers, hidden=128"]
+    B --> C["Last hidden state<br/>forward + backward = 256d"]
+    C --> D["Dense layer<br/>3-class softmax"]
+    style A fill:#3498db,stroke:#2980b9,color:#fff
+    style D fill:#e74c3c,stroke:#c0392b,color:#fff

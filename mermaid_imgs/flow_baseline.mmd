@@ -1,0 +1,10 @@
+graph LR
+    A["Cleaned text<br/>lemmatized"] --> B["TF-IDF<br/>Word 6848d<br/>+ Char 5000d"]
+    A --> C["Extra Features<br/>Punct 5 + Length 4"]
+    B --> D["Concatenate<br/>11,857d sparse matrix"]
+    C --> D
+    D --> E["Logistic Regression<br/>class_weight balanced"]
+    E --> F["3-class prediction<br/>F1=0.6606"]
+    style A fill:#3498db,stroke:#2980b9,color:#fff
+    style E fill:#2ecc71,stroke:#27ae60,color:#fff
+    style F fill:#2ecc71,stroke:#27ae60,color:#fff

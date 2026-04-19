@@ -1,0 +1,11 @@
+graph LR
+    A["TF-IDF Features<br/>11,857d"] --> B1["Logistic<br/>Regression"]
+    A --> B2["LinearSVC<br/>calibrated"]
+    A --> B3["Ridge<br/>Classifier"]
+    B1 --> C["Hard Voting<br/>majority vote"]
+    B2 --> C
+    B3 --> C
+    C --> D["Final prediction<br/>F1=0.6560"]
+    style A fill:#3498db,stroke:#2980b9,color:#fff
+    style C fill:#9b59b6,stroke:#8e44ad,color:#fff
+    style D fill:#2ecc71,stroke:#27ae60,color:#fff

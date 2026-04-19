@@ -1,0 +1,11 @@
+graph LR
+    A["Raw text<br/>minimal cleaning"] --> B["BERT WordPiece<br/>Tokenizer<br/>max 128 tokens"]
+    B --> C["BERT Encoder<br/>12 Transformer layers<br/>ALL frozen"]
+    C --> D["Extract CLS<br/>768d vector"]
+    D --> E["Save to disk<br/>npy files"]
+    E --> F["MLP Classifier<br/>256 128 3"]
+    F --> G["3-class<br/>prediction"]
+    style A fill:#3498db,stroke:#2980b9,color:#fff
+    style C fill:#f39c12,stroke:#e67e22,color:#fff
+    style F fill:#e74c3c,stroke:#c0392b,color:#fff
+    style G fill:#2ecc71,stroke:#27ae60,color:#fff

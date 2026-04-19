@@ -1,0 +1,6 @@
+graph LR
+    A["Token vectors<br/>[v1, v2, ..., vn]"] --> B["Mean Average<br/>d = Sum vi / n"]
+    B --> C["Single 300d<br/>document vector"]
+    C --> D["Traditional ML<br/>(SVM, XGBoost)"]
+    style A fill:#3498db,stroke:#2980b9,color:#fff
+    style D fill:#e74c3c,stroke:#c0392b,color:#fff

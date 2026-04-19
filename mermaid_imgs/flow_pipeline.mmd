@@ -1,0 +1,22 @@
+graph TD
+    A["Raw CSV<br/>3,125 Reddit comments"] --> B["Phase 1: EDA<br/>Class distribution, text stats,<br/>word clouds, bigrams, outliers"]
+    B --> C["Phase 2: Data Cleaning<br/>6 improvements to 2,809 rows<br/>3 text variants created"]
+    C --> D["Stratified Train/Test Split<br/>80/20, random_state=42<br/>Train: 2,247 | Test: 562"]
+    D --> E1["TF-IDF<br/>(11,857d)"]
+    D --> E2["Word2Vec<br/>(300d, scratch)"]
+    D --> E3["GloVe<br/>(300d, pretrained)"]
+    D --> E4["BERT<br/>(768d, pretrained)"]
+    D --> E5["FastText<br/>(300d, scratch)"]
+    D --> E6["Doc2Vec<br/>(300d, scratch)"]
+    E1 --> F1["Logistic Regression<br/>Baseline F1=0.66"]
+    E2 --> F2["SVM<br/>(RBF kernel)"]
+    E3 --> F3["XGBoost"]
+    E4 --> F4["MLP /<br/>Fine-tuned"]
+    E5 --> F5["BiLSTM"]
+    E6 --> F6["1D CNN"]
+    F1 & F2 & F3 & F4 & F5 & F6 --> G["Phase 3iv: Refinement<br/>GridSearchCV, Class Weights,<br/>SMOTE, Focal Loss, Voting"]
+    G --> H["Phase 4: Ensemble Stacking<br/>+ Baseline Voting Ensemble"]
+    H --> I["Phase 4: Creativity<br/>SHAP, t-SNE, UMAP,<br/>Error Analysis"]
+    style F1 fill:#2ecc71,stroke:#27ae60,color:#fff
+    style A fill:#3498db,stroke:#2980b9,color:#fff
+    style I fill:#9b59b6,stroke:#8e44ad,color:#fff

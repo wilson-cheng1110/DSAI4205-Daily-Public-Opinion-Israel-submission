@@ -1,0 +1,7 @@
+graph LR
+    A["Full document text"] --> B["Doc2Vec PV-DM<br/>40 epochs training"]
+    B --> C["300d document<br/>vector"]
+    C --> D["Reshape 1x300<br/>Conv1D layers"]
+    D --> E["Flatten Dense<br/>3-class softmax"]
+    style A fill:#3498db,stroke:#2980b9,color:#fff
+    style E fill:#e74c3c,stroke:#c0392b,color:#fff

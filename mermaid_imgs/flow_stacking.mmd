@@ -1,0 +1,12 @@
+graph TD
+    B1["LR+TF-IDF"] --> M["Cross-validated<br/>probability predictions"]
+    B2["GloVe+XGB"] --> M
+    B3["BERT+MLP"] --> M
+    B4["FT+BiLSTM"] --> M
+    B5["D2V+CNN"] --> M
+    B6["W2V+SVM"] --> M
+    M --> N["18 meta-features<br/>6 models x 3 classes"]
+    N --> O["Meta-Classifier<br/>Logistic Regression"]
+    O --> P["Final 3-class<br/>prediction"]
+    style O fill:#9b59b6,stroke:#8e44ad,color:#fff
+    style P fill:#2ecc71,stroke:#27ae60,color:#fff

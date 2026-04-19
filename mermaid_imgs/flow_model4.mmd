@@ -1,0 +1,9 @@
+graph LR
+    A["Cleaned text"] --> B["Tokenize +<br/>FastText Lookup<br/>subword-aware 300d"]
+    B --> C["Pad or Truncate<br/>100 x 300 matrix"]
+    C --> D["BiLSTM<br/>2 layers<br/>hidden=128"]
+    D --> E["Last hidden<br/>state 256d"]
+    E --> F["Dense Softmax<br/>3-class output"]
+    style A fill:#3498db,stroke:#2980b9,color:#fff
+    style D fill:#e74c3c,stroke:#c0392b,color:#fff
+    style F fill:#2ecc71,stroke:#27ae60,color:#fff

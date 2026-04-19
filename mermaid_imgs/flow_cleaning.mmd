@@ -1,0 +1,13 @@
+graph TD
+    A["Raw Data<br/>3,125 rows"] --> B["Step 1: Remove duplicates<br/>-8 rows"]
+    B --> C["Step 2: Fix encoding<br/>638 texts fixed"]
+    C --> D["Step 3: Normalize text<br/>lowercase, remove URLs HTML"]
+    D --> E["Step 4: Lemmatize + stopwords<br/>spaCy + NLTK"]
+    E --> F["Step 5: Remove short texts<br/>-313 rows"]
+    F --> G["Enhanced Pipeline<br/>6 improvements"]
+    G --> H1["cleaned_text_v2<br/>full lemmatized<br/>for TF-IDF"]
+    G --> H2["cleaned_text_light<br/>no lemmatization<br/>for embeddings"]
+    G --> H3["cleaned_text_bert<br/>minimal cleaning<br/>for BERT"]
+    H1 & H2 & H3 --> I["Final: 2,809 rows<br/>3 text variants"]
+    style A fill:#e74c3c,stroke:#c0392b,color:#fff
+    style I fill:#2ecc71,stroke:#27ae60,color:#fff
